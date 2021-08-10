@@ -29,10 +29,20 @@ int verificarHoraPosterior(tipoHora hora1, tipoHora hora2)
         horaPosterior=0;
     return horaPosterior;
 }
+
+int verificarHoraValida(tipoHora hora)
+{
+    int horaValida;
+    if(hora.hora<60 && hora.min<60 && hora.seg<60)
+        horaValida=1;
+    else
+        horaValida=0;
+    return horaValida;
+}
  
 
 int main()
-{
+/*{
     tipoHora h1, h2;
     int posterior;
     printf("Ingrese la primera hora\n");
@@ -41,4 +51,12 @@ int main()
     leerHora( h2);
     posterior=verificarHoraPosterior( h1, h2);
     printf("La primera hora es posterior a la segunda : %d\n", posterior);
+}*/
+{
+    tipoHora h;
+    int valido;
+    printf("Ingrese la hora\n");
+    leerHora( h);
+    valido=verificarHoraValida( h);
+    printf("La hora es valida : %d\n", valido);
 }
