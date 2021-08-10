@@ -39,7 +39,36 @@ int verificarHoraValida(tipoHora hora)
         horaValida=0;
     return horaValida;
 }
- 
+
+int incrementarUnSegundo(tipoHora *hora)
+{
+    tipoHora h;
+    int cambiaDia;
+    h=*hora;
+    h.seg=h.seg+1;
+    if(h.seg==60)
+    {
+        h.seg=0;
+        h.min=h.min+1;
+        if(h.min==60)
+        {
+            h.min=0;
+            h.hora=h.hora+1;
+            if(h.hora==24)
+            {
+                h.hora=0;
+                cambiaDia=1;
+            }
+        }
+    }
+    *hora=h;
+    return cambiaDia;
+}
+
+void mostrarHora(tipoHora hora)
+{
+    printf("Fecha %d:%d:%d    ", hora.hora, hora.min, hora.seg);
+}
 
 int main()
 /*{
@@ -51,7 +80,7 @@ int main()
     leerHora( h2);
     posterior=verificarHoraPosterior( h1, h2);
     printf("La primera hora es posterior a la segunda : %d\n", posterior);
-}*/
+}
 {
     tipoHora h;
     int valido;
@@ -59,4 +88,12 @@ int main()
     leerHora( h);
     valido=verificarHoraValida( h);
     printf("La hora es valida : %d\n", valido);
+}*/
+{
+    tipoHora h;
+    printf("Ingrese la hora\n");
+    leerHora( h);
+    incrementarUnSegundo( h);
+    printf("La hora resultante es : ");
+    mostrarHora( h);
 }
