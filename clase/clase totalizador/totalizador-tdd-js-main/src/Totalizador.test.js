@@ -14,10 +14,13 @@ describe("Totalizador ", () => {
   it("deberia calcular para el estado de NV", () => {
     expect(calcularTotal(2, 2, "NV")).toEqual(4.32);
   });
+  it("deberia calcular para el estado de TX", () => {
+    expect(calcularTotal(2, 2, "TX")).toEqual(4.25);
+  });
 });
 
 function impuestoEstado(estado){
-  let impuestos = { CA: 0.0825, UT: 0.0665, NV: 0.08, "": 0 };
+  let impuestos = { CA: 0.0825, UT: 0.0665, NV: 0.08, TX: 0.0625, "": 0 };
   return impuestos[estado];
 }
 
