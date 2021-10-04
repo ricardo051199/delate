@@ -5,6 +5,7 @@ calcularTotal(cantidad, precio, estado)
         - UT OK
         - NV OK
         - TX OK
+        - AL OK
 - calcular total incluyendo más estados
 - calcular total para 1 descuento 
 - calcular total para varios descuentos
