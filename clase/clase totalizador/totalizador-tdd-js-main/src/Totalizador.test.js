@@ -5,7 +5,7 @@ describe("Totalizador ", () => {
   it("deberia calcular para una cantidad calquiera", () => {
     expect(calcularTotal(2, 1, "")).toEqual(2);
   });
-  it("deberia calcular para un estado por defecto", () => {
+  it("deberia calcular para el estado CA", () => {
     expect(calcularTotal(2, 2, "CA")).toEqual(4.33);
   });
   it("deberia calcular para el estado de UT", () => {
@@ -20,6 +20,9 @@ describe("Totalizador ", () => {
   it("deberia calcular para el estado de AL", () => {
     expect(calcularTotal(2, 2, "AL")).toEqual(4.16);
   });
+  it("calcular total para un descuento de 0%", () => {
+    expect(calcularTotal(2, 2, "AL")).toEqual(4.16);
+  });
 });
 
 function impuestoEstado(estado){
@@ -31,5 +34,5 @@ function calcularTotal(cantidad, precio, estado) {
   let total = cantidad * precio;
   let impuesto = impuestoEstado(estado);
   total = total + total * impuesto;
-  return total;
+  return total + 0;
 }
