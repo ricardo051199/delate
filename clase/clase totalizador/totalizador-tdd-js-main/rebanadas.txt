@@ -12,4 +12,5 @@ calcularTotal(cantidad, precio, estado)
         - 3%
         - 5%
         - 7%
+        - 10%
 - calcular total para varios descuentos
