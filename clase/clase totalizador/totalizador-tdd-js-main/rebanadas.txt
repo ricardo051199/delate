@@ -8,9 +8,10 @@ calcularTotal(cantidad, precio, estado)
         - TX OK
         - AL OK
 - calcular total para un descuento de:
-        - 0%
-        - 3%
-        - 5%
-        - 7%
-        - 10%
+        - 0% OK
+        - 3% OK
+        - 5% OK
+        - 7% OK
+        - 10% OK
+        - 15% OK
 - calcular total para varios descuentos

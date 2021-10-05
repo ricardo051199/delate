@@ -35,6 +35,9 @@ describe("Totalizador ", () => {
   it("deberia calcular total para un descuento de 10%", () => {
     expect(calcularTotal(10000, 2, "AL")).toEqual(18720);
   });
+  it("deberia calcular total para un descuento de 15%", () => {
+    expect(calcularTotal(30000, 2, "AL")).toEqual(53040);
+  });
 });
 
 function impuestoEstado(estado){
@@ -48,6 +51,7 @@ function descuentoCantidad(cantidad){
   if(cantidad >= 3000) descuento = 0.05;
   if(cantidad >= 7000) descuento = 0.07;
   if(cantidad >= 10000) descuento = 0.1;
+  if(cantidad >= 30000) descuento = 0.15;
   return descuento;
 }
 
