@@ -20,14 +20,17 @@ describe("Totalizador ", () => {
   it("deberia calcular para el estado de AL", () => {
     expect(calcularTotal(2, 2, "AL")).toEqual(4.16);
   });
-  it("deberia calcular total con un descuento para una cantidad menor a mil", () => {
+  it("deberia calcular total para un descuento de 0%", () => {
     expect(calcularTotal(2, 2, "AL")).toEqual(4.16);
   });
-  it("deberia calcular total con un descuento para una cantidad mayor o igual a mil", () => {
+  it("deberia calcular total para un descuento de 3%", () => {
     expect(calcularTotal(1002, 2, "AL")).toEqual(2021.6352);
   });
-  it("deberia calcular total con un descuento para una cantidad mayor o igual a tres mil", () => {
+  it("deberia calcular total para un descuento de 5%", () => {
     expect(calcularTotal(3000, 2, "AL")).toEqual(5928);
+  });
+  it("deberia calcular total para un descuento de 7%", () => {
+    expect(calcularTotal(7000, 2, "AL")).toEqual(13540.8);
   });
 });
 
@@ -40,6 +43,7 @@ function descuentoCantidad(cantidad){
   let descuento = 0;
   if(cantidad >= 1000) descuento = 0.03;
   if(cantidad >= 3000) descuento = 0.05;
+  if(cantidad >= 7000) descuento = 0.07;
   return descuento;
 }
 

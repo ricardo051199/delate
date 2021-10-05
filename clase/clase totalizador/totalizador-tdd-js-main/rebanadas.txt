@@ -8,7 +8,8 @@ calcularTotal(cantidad, precio, estado)
         - TX OK
         - AL OK
 - calcular total para un descuento de:
-        - unidades < 1000 OK
-        - unidades >= 1000 OK
-        - unidades >= 3000 OK
+        - 0%
+        - 3%
+        - 5%
+        - 7%
 - calcular total para varios descuentos
